@@ -16,8 +16,5 @@ ufw reload > /dev/null
 # Restrict to port 443
 #for cfip in `cat /tmp/cf_ips`; do ufw allow proto tcp from $cfip to any port 443 comment 'Cloudflare IP'; done
 
-# Restrict to port 2048 (Railgun)
-#for cfip in `cat /tmp/cf_ips`; do ufw allow proto tcp from $cfip to any port 2048/tcp comment 'Cloudflare IP'; done
-
-# Restrict to ports 80, 443, 2048
-#for cfip in `cat /tmp/cf_ips`; do ufw allow proto tcp from $cfip to any port 80,443,2048/tcp comment 'Cloudflare IP'; done
+# Restrict to ports 80 & 443
+#for cfip in `cat /tmp/cf_ips`; do ufw allow proto tcp from $cfip to any port 80,443 comment 'Cloudflare IP'; done
